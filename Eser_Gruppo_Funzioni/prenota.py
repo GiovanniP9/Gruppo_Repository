@@ -6,6 +6,7 @@ def prenota_concerto(utente_loggato):
     # Recupero la lista dei concerti
     concerti_registrati = get_concerti()
 
+    # Controllo in caso di 0 concerti
     if len(concerti_registrati) == 0:
         print("Non ci sono concerti disponibili.")
         return
@@ -14,7 +15,6 @@ def prenota_concerto(utente_loggato):
     print("Concerti disponibili:")
     for i in range(len(concerti_registrati)):
         concerto = concerti_registrati[i]
-        # concerto = [nome_concerto, data, luogo, posti]
         nome = concerto[0]
         data = concerto[1]
         luogo = concerto[2]
@@ -31,7 +31,7 @@ def prenota_concerto(utente_loggato):
 
     # Prelevo il concerto scelto
     concerto_scelto = concerti_registrati[scelta_concerto]
-    posti_disponibili = concerto_scelto[3]  # Indice 3 = posti
+    posti_disponibili = concerto_scelto[3]
 
     # Richiedo quanti posti prenotare
     posti_prenotati = int(input("Quanti posti vuoi prenotare? (max 3) "))
@@ -51,7 +51,7 @@ def prenota_concerto(utente_loggato):
     # Aggiorno i posti
     concerto_scelto[3] = posti_disponibili - posti_prenotati
 
-    # Registro la prenotazione: [nome_utente_loggato, nome_concerto, posti]
+    # Registrazione prenotazione
     prenotazioni_effettuate.append([utente_loggato, concerto_scelto[0], posti_prenotati])
     print(f"Prenotazione effettuata per {posti_prenotati} posto/i al concerto '{concerto_scelto[0]}'!")
 
