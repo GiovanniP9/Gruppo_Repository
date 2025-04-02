@@ -18,35 +18,35 @@ def menu():
             scelta = input("Scegli un'opzione: ")
 
             match scelta:
-                  case "1":
+                  case "1": # Registrazione utente
                         registra_utente()
 
-                  case "2":
+                  case "2": # Login utente
                         utente_loggato = login_utente()
 
-                  case "3":
+                  case "3": # Registrazione concerto
                         if utente_loggato is not None:
                               crea_concerto()
-                        else:
+                        else: # Se non si è loggato, richiedo login
                               print("Devi prima effettuare il login.")
 
-                  case "4":
+                  case "4": # Prenotazione concerto
                         if utente_loggato is not None:
                               prenota_concerto(utente_loggato)
-                        else:
+                        else: # Se non si è loggato, richiedo login
                               print("Devi prima effettuare il login.")
 
-                  case "5":
+                  case "5": # Visualizza prenotazioni
                         if utente_loggato is not None:
                               visualizza_prenotazioni()
-                        else:
+                        else: # Se non si è loggato, richiedo login
                               print("Devi prima effettuare il login.")
 
-                  case "6":
+                  case "6": # Esci
                         print("Arrivederci!")
                         break
 
-                  case _:
+                  case _: # Scelta non valida
                         print("Scelta non valida!")
                         
 menu()

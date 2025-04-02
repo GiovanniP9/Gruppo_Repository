@@ -54,10 +54,8 @@ def prenota_concerto(utente_loggato):
     # Registrazione prenotazione
     prenotazioni_effettuate.append([utente_loggato, concerto_scelto[0], posti_prenotati])
     print(f"Prenotazione effettuata per {posti_prenotati} posto/i al concerto '{concerto_scelto[0]}'!")
-
-def get_prenotazioni():
-    return prenotazioni_effettuate
-
+    
+    #visualizzo le prenotazioni
 def visualizza_prenotazioni():
     if len(prenotazioni_effettuate) == 0:
         print("Nessuna prenotazione effettuata.")

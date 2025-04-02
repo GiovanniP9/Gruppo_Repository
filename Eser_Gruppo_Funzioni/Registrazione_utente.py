@@ -16,18 +16,15 @@ def registra_utente():
     utenti_registrati.append([nome, password])
     print("Registrazione completata con successo!")
 
-def login_utente():
+def login_utente(): # Verifica se l'utente è registrato e se la password è corretta
     nome = input("Inserisci il tuo nome utente: ")
     password = input("Inserisci la tua password: ")
 
-    for utente in utenti_registrati:
+    for utente in utenti_registrati: # ciclo tutti gli utenti
         if utente[0] == nome and utente[1] == password:
             print("Login eseguito con successo!")
-            return nome  # Restituisco il nome per sapere chi è loggato
+            return nome  
 
     print("Nome utente o password non validi.")
     return None
 
-def get_utenti():
-    # Se ti serve, restituisce la lista di utenti registrati
-    return utenti_registrati
